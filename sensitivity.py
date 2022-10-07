@@ -234,37 +234,37 @@ for a in range(8):
         
         
         # instance according on the dat file
-        SCUC_instance = model.create_instance('case16.dat')
+        Sizing_instance = model.create_instance('case16.dat')
         
         ### set the solver
-        SCUCsolver = SolverFactory('gurobi')
-        SCUCsolver.options.mipgap = 0.001
-        results = SCUCsolver.solve(SCUC_instance)
+        Sizingsolver = SolverFactory('gurobi')
+        Sizingsolver.options.mipgap = 0.001
+        results = Sizingsolver.solve(Sizing_instance)
         Data =[]
         Result =[]
-        
+    
         print("\nresults.Solution.Status: " + str(results.Solution.Status))
         print("\nresults.solver.status: " + str(results.solver.status))
         print("\nresults.solver.termination_condition: " + str(results.solver.termination_condition))
         print("\nresults.solver.termination_message: " + str(results.solver.termination_message))
-        print('\nminimize cost: ' + str(SCUC_instance.Cost()))
-        
-        for j in SCUC_instance.PERIOD:
-            X = [str(SCUC_instance.ESS[j]()/SCUC_instance.BESS()), str(SCUC_instance.PCHARGE[j]()),str(SCUC_instance.PDISCHARGE[j]()),str(SCUC_instance.Cav_lvl[j]()),str(SCUC_instance.P_FC[j]()),str(SCUC_instance.P_El[j]())]
+        print('\nminimize cost: ' + str(Sizing_instance.Cost()))
+    
+        for j in Sizing_instance.PERIOD:
+            X = [str(Sizing_instance.ESS[j]()/Sizing_instance.BESS()), str(Sizing_instance.PCHARGE[j]()),str(Sizing_instance.PDISCHARGE[j]()),str(Sizing_instance.Cav_lvl[j]()),str(Sizing_instance.P_FC[j]()),str(Sizing_instance.P_El[j]())]
             Data.append(X)
         
         Data = pd.DataFrame(Data, columns=['ESS_SOC', 'CHARGE', 'DISCHARGE','Cavern_lvl','FC','El'])
         print (Data)
         
-        print('\Wind Turbin Amount: ' + str(SCUC_instance.WT()))
-        print('\BESS Capacity: ' + str(SCUC_instance.BESS()) + ' kWh')
-        print('\Eletrolyzer Power: ' + str(SCUC_instance.El()) + ' kW')
-        print('\Fuel Cell power: ' + str(SCUC_instance.FC()) + ' kW')
-        print('\Cavern Size: ' + str(SCUC_instance.Cavern()/40)+ ' kg')
+        print('\Wind Turbin Amount: ' + str(Sizing_instance.WT()))
+        print('\BESS Capacity: ' + str(Sizing_instance.BESS()) + ' kWh')
+        print('\Eletrolyzer Power: ' + str(Sizing_instance.El()) + ' kW')
+        print('\Fuel Cell power: ' + str(Sizing_instance.FC()) + ' kW')
+        print('\Cavern Size: ' + str(Sizing_instance.Cavern()/40)+ ' kg')
         
-        X = [SCUC_instance.WT(), SCUC_instance.BESS(),SCUC_instance.El(),SCUC_instance.FC(),SCUC_instance.Cavern()/SCUC_instance.H2_kwh(), \
-                  (SCUC_instance.Cost()-SCUC_instance.Operation())/1000000, SCUC_instance.Operation()/1000000,SCUC_instance.Cost()/1000000 ]
-        ResultData[a,b] = SCUC_instance.Cost()/1000000/8.76
+        X = [Sizing_instance.WT(), Sizing_instance.BESS(),Sizing_instance.El(),Sizing_instance.FC(),Sizing_instance.Cavern()/Sizing_instance.H2_kwh(), \
+                  (Sizing_instance.Cost()-Sizing_instance.Operation())/1000000, Sizing_instance.Operation()/1000000,Sizing_instance.Cost()/1000000 ]
+        ResultData[a,b] = Sizing_instance.Cost()/1000000/8.76
 
 
 
