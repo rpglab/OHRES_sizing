@@ -35,7 +35,9 @@ Cunzhi Zhao developed this program. Xingpeng Li supervised this work.
 
 ## Contact:
 If you need any techinical support, please feel free to reach out to Cunzhi Zhao at czhao20@uh.edu.
+
 For collaboration, please contact Dr. Xingpeng Li at xli83@central.uh.edu.
+
 Website: https://rpglab.github.io/
 
 
