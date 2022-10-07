@@ -26,7 +26,7 @@ If you use these codes for your work, please cite the following paper:
 
 Cunzhi Zhao and Xingpeng Li, “A 100% Renewable Energy System: Enabling Zero CO2 Emission Offshore Platforms”, *54th North American Power Symposium*, Salt Lake City, UT, USA, Oct. 2022.
 
-Paper website: <a class="off" href="/papers/Cunzhi-OffshoreMG-Sizing/"  target="_blank">https://rpglab.github.io/papers/Cunzhi-OffshoreMG-Sizing/</a>
+Paper website: https://rpglab.github.io/papers/Cunzhi-OffshoreMG-Sizing/
 
 
 ## Contributions:
