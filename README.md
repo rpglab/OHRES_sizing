@@ -9,12 +9,12 @@ case16.dat
 
 
 ### Codes: 
-1. SCUC.py  
+1. sizing.py  
 	* models the BESS, HESS and Wind turbine system.
 	* models the resilience duration time when there is no wind power.
 2. sensitivity.py   
 	* perform the sensitivity tests on the renewable units' prices.
-	* based on the SCUC.py
+	* based on the sizing.py
 
 
 ### Environment Setting:
