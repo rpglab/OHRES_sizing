@@ -1,6 +1,6 @@
 ## Optimal Sizing of Offshore Hybrid Renewable Energy Systems
 
-This program models the zeros emmision resilient offshore hybrid renewable energy system (OHRES). It is designed to optimize the size of the renewable units such that the relavent cost is minimized while meeting various constraints and requirements.
+This program determines the optimal size of zero-emission resilient offshore hybrid renewable energy system (OHRES). It is designed to optimize the size of the renewable units such that the relevant cost is minimized while meeting various constraints and requirements. 
 
 
 ### Input files:
